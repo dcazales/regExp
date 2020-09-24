@@ -1,87 +1,99 @@
-<!DOCTYPE HTML>
-<html lang="en">
-   <head>
-      <meta charset=utf-8>
-      <title>Landing Page</title>
-      <meta  name="viewport" content="width=device-width,initial-scale=1">
-      <script>
-		//I initially did not understan how the code was comparing the words
-		//const str = 'table football';
-		//original has two words therefore those are the two input fields
-		 function RegExp() {
-		                var r_word1 = document.getElementById("word1").value; 
-		                var r_word2 = document.getElementById("word2").value; 
-
-		                //the second field (which should hold the regular expression)
-		                var regex_word = RegExp(r_word2); 
-
-		                //console.log(regex.test(str));
-		                //how to compare?
 
 
-		                if (r_word1 === '')||(r_word2 =='') {
-		                    document.getElementById("result").value = 'Cant be empty'
-		                }  else {
-		                    document.getElementById("result").value = 'true';
-		                }   
-		            }
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Regular Expression</title>
+        <meta charset="utf-8"/>
+       <script> 
+        //I initially did not understan how the code was comparing the words
+
+
+        //const str = 'table football';
+        //original has two words therefore those are the two input fields
+         function RegExp() {
+                        var r_word1 = document.getElementById("word1").value; 
+                        var r_word2 = document.getElementById("word2").value; 
+
+                        //the second field (which should hold the regular expression)
+                        var regex_word = RegExp(r_word2); 
+
+                        //console.log(regex.test(str));
+                        //how to compare?
+
+
+                        if (r_word1 === '')||(r_word2 =='') {
+                            document.getElementById("result").value = 'Cant be empty'
+                        }  else {
+                            document.getElementById("result").value = 'true';
+                        }   
+                    }
         </script>
-      <style>
-      	body{
-      		background-color:#00b3b3
 
-      	}
-      	
-      	h1 {
-      		text-align: center;
-      		color: #ff4d4d;
-      		font-family: Lucida Console;
-      		font-size: 55px;
-      		margin-bottom: -15px;
-      	}
-      	
-      	h2 {
-      		text-align:center;
-      		color: white; 
-      		margin-bottom: 30px;
-      	}
+        <style>
+    
+            body{background:salmon;}
 
-      	h3{
-      		color: #ff4d4d;
-      		font-size: 25px;
-      	}
-      	p{
-      		color: white;
-      		font-size: 16px;
-      		font-family: Arial, Helvetica, sans-serif;
-      	}
+            h1{
+                text-align: center;
+                color: #BD3B31;
+                font-size: 80px;
+                margin-bottom: 100px;
+            }
 
-      </style>
-   </head>
 
-<body>
-<div id="container">
-   <header>
-      <h1>Software Engineering -44000 Landing Page</h1>
-      <h2>Diana Cazales</h2>
-   </header>  
-   <body>
-   	<section>
-   		<p>Welcome to my page you can see all of the work we will be completing in this class, during the fall semester of 2020. The work will be grouped by sprints.</p>
-   		<article>
-   			<h3>Sprint 1</h3>
-   			<p><A HREF="https://my-favorite-hobby-dc.azurewebsites.net/"target="_blank">My favorite Hobby</A></p>
 
-   		</article>		
+            .button  {    
+                background-color: #BD3B31;
+                color: white;
+                padding: 30px;
+                text-align: center;
+                font-size: 25px;
+                margin:-50px 55%;
+                border-radius: 12px;
+                        }
 
-   		<article>
-   			<h3>Sprint 2</h3>
-   			<p><A HREF="https://syllabus-dc.azurewebsites.net/"target="_blank">Syllabus</A></p>
-   			<p><A HREF="https://diceroll.azurewebsites.net/"target="_blank">Dice Roll</A></p>
-   		</article>
-   	</section>
-   </body>
- <footer>
-   
- </footer>  
-</html> 
+             label{
+                color: #9C3028;
+                font-family: arial bold;
+                font-size: 30px;
+             }
+             
+             input{
+                background-color:#FD9E9E;
+                width: 150px;
+                height:40px;
+                padding: 10px;
+                margin-left: 40px;
+                font-size: 20px;
+                color: #BD3B31;
+
+
+             } 
+
+             #result{
+                margin-left: 50px;
+             }      
+        </style>
+
+
+        <script src="regexp.js"></script>
+
+    </head>
+    <body>
+        <h1 >Regular Expression</h1> 
+            <p>Text Goes Here</p> 
+       
+            <label>Word 1:</label> 
+            <input type="text" id="word1" name="word1" ><br><br>
+           
+            <button type="button" class="button" onclick="RegExp(word1, word2)">Check
+            </button><br><br> 
+
+            <label>Word 2:</label> 
+            <input type="text" id="word2" name="word2" ><br><br>
+
+            <label for="result">Result:</label> 
+            <input type="text" id="result" name="result" disabled > 
+    </body>
+</html>
