@@ -4,7 +4,7 @@ This repository will only contain items for Eric Pouges Software Enginnering 440
 
 - Name: Diana Cazales
 - Contact information: 
-- school emai: dianacazales@lewisu.edu
+- school email: dianacazales@lewisu.edu
 
 
 The repository will contain projects Lab 2. 
