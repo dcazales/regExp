@@ -11,22 +11,25 @@
 
         //const str = 'table football';
         //original has two words therefore those are the two input fields
-         function RegExp() {
-                        var r_word1 = document.getElementById("word1").value; 
-                        var r_word2 = document.getElementById("word2").value; 
+         function RegularExpression() {
+                        var word1 = document.getElementById("word1").value; 
+                        var word2 = document.getElementById("word2").value; 
+                        var regex_word = RegExp(word2);
 
                         //the second field (which should hold the regular expression)
-                        var regex_word = RegExp(r_word2); 
 
-                        //console.log(regex.test(str));
-                        //how to compare?
+                        
 
+                        if (word1 === '') {
+                            document.getElementById("result").value = 'Cant leave word 1 empty'
+                        }  
+                        else if (word2==''){
+                            document.getElementById("result").value = 'Cant leave word 2 empty'
+                        }    
+                        else {//console.log(regex.test(str)) how to compare?
+                            document.getElementById("result").value=regex_word.test(word1);
+                        }
 
-                        if (r_word1 === '')||(r_word2 =='') {
-                            document.getElementById("result").value = 'Cant be empty'
-                        }  else {
-                            document.getElementById("result").value = 'true';
-                        }   
                     }
         </script>
 
@@ -61,18 +64,23 @@
              
              input{
                 background-color:#FD9E9E;
-                width: 150px;
+                width: 250px;
                 height:40px;
                 padding: 10px;
                 margin-left: 40px;
                 font-size: 20px;
                 color: #BD3B31;
-
-
              } 
 
              #result{
                 margin-left: 50px;
+             }
+             p{
+                color: #BD3B31;
+                font-size: 20px;
+                font-family: arial bold;
+
+
              }      
         </style>
 
@@ -82,15 +90,16 @@
     </head>
     <body>
         <h1 >Regular Expression</h1> 
-            <p>Text Goes Here</p> 
+            <p>This small application tests regular expressions. The code that was used for this application is from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test/">Mozilla</a>. It was adapted for this small html application. </p> 
+            <p>To use this application, you simply have to type one word in each box and click check. You cannot leave a box blank. Then in the result box, it will tell you true or false. </p>
        
-            <label>Word 1:</label> 
+            <label for="word1">Word 1:</label> 
             <input type="text" id="word1" name="word1" ><br><br>
            
-            <button type="button" class="button" onclick="RegExp(word1, word2)">Check
+            <button type="button" class="button" onclick="RegularExpression(word1, word2)">Check
             </button><br><br> 
 
-            <label>Word 2:</label> 
+            <label for= "word2">Word 2:</label> 
             <input type="text" id="word2" name="word2" ><br><br>
 
             <label for="result">Result:</label> 
